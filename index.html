@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width:600px;
+            border-spacing:0;
+            border:1 px polid #bbb;
+            width: 600px;
+        }
+        #tble tr{
+            height:27px;
+        }
+        #tble tr th , #tble tr td{
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+        #tble tr:last-child td{
+            border:none;
+        }
+        form{
+            border: 2px solid rgb(0, 0, 0);
+        }
+        
+    </style>
+</head>
+<body>
+    <form name="frm">
+        <p>
+            <label>First Name:
+                <input type="text" name="fname" id="fname"/>
+            </label>
+        </p>
+        <p> 
+            <label>Last Name:
+                <input type="text" name="lname" id="lname"/>
+            </label>
+        </p>
+        <p> 
+            <label>Score:
+                <input type="text" name="score" id="score"/>
+            </label>
+        </p>
+        <p>
+            <button type="button" onclick="ok()">OK </button>
+        </p>
+    
+    <table id="tble">
+        <tr >
+            <th>N</th>
+            <th>Full Name</th>
+            <th>Score</th>
+            <th>pass</th>
+            <th>mention</th>
+            
+        </tr>
+    </table>
+    <script type="text/javascript">
+        var N=0;
+        function ok(){
+            N++;
+            var fname=frm.fname.value;
+            var lastname= frm.lname.value;
+            var score=frm. score.value;
+            if(score>=5){
+                var pass="qua";
+            }
+            if(score<5){
+                var pass="failse";
+            }
+            if(score>=5){
+                var mention="good";
+            }
+            if(score<5){
+                var mention="yếu";
+            }
+            var row="<tr>";
+            row +="<td>"+fname+"</td>";
+            row +="<td>"+lastname+"</td>";
+            row +="<td>"+score+"</td>";
+            row +="<td>"+pass+"</td>";
+            row +="<td>"+mention+"</td>";
+            row +="</tr>"
+            document.getElementById("tble").innerHTML +=row;
+        }
+    </script>
+    </form>
+</body>
+</html>
